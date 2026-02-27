@@ -25,38 +25,179 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "vnvc-app",
-    title: "VNVC Ecosystem",
-    subtitle: "Enterprise Healthcare & Vaccination Platform",
-    overview: "A mission-critical healthcare platform serving millions of users across VNVC vaccination centers, Tam Anh Hospital, and Eco Green. Built to handle massive concurrent traffic and complex medical data synchronization.",
+    id: "vnvc-platform",
+    title: "VNVC Ecosystem Platform",
+    subtitle: "Enterprise Healthcare Platform – High Concurrency, Booking & Campaign System",
+    overview: "I played a key backend engineering role in building and scaling multiple core systems within the VNVC healthcare ecosystem, including booking, campaign engines, notification systems, and third-party APIs. The platform serves large user volumes and requires high reliability, performance optimization, and strict business rule enforcement.",
     responsibilities: [
-      "Designed and implemented high-performance RESTful APIs using ASP.NET Core.",
-      "Applied Clean Architecture principles to ensure long-term maintainability and testability.",
-      "Built a complex salary calculation module handling thousands of employee records with diverse contract types.",
-      "Integrated RabbitMQ for asynchronous processing of vaccination records and notification services.",
-      "Optimized SQL Server stored procedures and indexing, reducing report generation time by 60%."
+      "Designed and implemented LuckyShake campaign system with atomic voucher claim logic using Redis Lua.",
+      "Processed 2000+ concurrent users during campaigns with complex eligibility rules (age, region, PID, booking history).",
+      "Built async processing with Redis Streams and synced MongoDB with Elasticsearch for search consistency.",
+      "Diagnosed severe performance bottlenecks, reducing booking API latency from 40–50 seconds down to 4–5 seconds.",
+      "Optimized database queries, indexing strategy, and caching layers to improve throughput and stability.",
+      "Rebuilt sequential notification jobs into batch-processing architecture with retry & idempotency safeguards.",
+      "Built public APIs for external partners with secure contracts, rate-limiting, and dynamic T&C configuration."
     ],
     architecture: {
-      api: ".NET 8 Web API / Clean Architecture",
-      messageQueue: "RabbitMQ (MassTransit)",
-      database: "SQL Server (Enterprise Edition)",
-      caching: "Redis (Distributed Cache)",
-      realtime: "SignalR for live queue updates"
+      api: "ASP.NET Core / Distributed Microservices",
+      messageQueue: "Redis Streams / RabbitMQ",
+      database: "MongoDB / PostgreSQL",
+      caching: "Redis (Lua Atomic Scripts)",
+      realtime: "SignalR / Redis Streams"
     },
     techStack: {
-      backend: ["C#", "ASP.NET Core", "Entity Framework Core", "MediatR", "FluentValidation"],
-      database: ["SQL Server", "Redis"],
-      infrastructure: ["Docker", "Jenkins", "GitLab CI/CD", "RabbitMQ"]
+      backend: ["C#", "ASP.NET Core", "Redis (Lua)", "Redis Streams", "MediatR"],
+      database: ["MongoDB", "PostgreSQL", "Redis"],
+      infrastructure: ["Docker", "Elasticsearch", "Background Jobs", "Distributed Processing"]
     },
     impact: [
-      "Successfully supported multi-branch synchronization for 100+ vaccination centers.",
-      "Reduced API latency by 40% through strategic caching and query optimization.",
-      "Automated complex payroll processes, reducing HR manual workload by 80%.",
-      "Ensured 99.9% uptime for critical vaccination booking flows."
+      "Reduced booking API latency by 90% (from 50s to 5s) through query and cache optimization.",
+      "Successfully handled 2000+ concurrent users during high-traffic LuckyShake campaigns.",
+      "Stabilized production job failures by refactoring to a batch-processing architecture.",
+      "Enabled secure third-party integrations via a robust public API platform."
     ],
     screenshots: [
-      "https://picsum.photos/seed/vnvc1/1200/800",
-      "https://picsum.photos/seed/vnvc2/1200/800"
+      "https://picsum.photos/seed/vnvc-platform1/1200/800",
+      "https://picsum.photos/seed/vnvc-platform2/1200/800"
+    ]
+  },
+  {
+    id: "healthcare-partner-api",
+    title: "Tam Anh Partner API",
+    subtitle: "Partner Integration & Maintenance System",
+    overview: "Maintained and stabilized a dedicated API service used by the Tam Anh healthcare application. Focused primarily on production stability, bug fixing, and partner integration consistency.",
+    responsibilities: [
+      "Fixed critical production issues affecting partner app workflows and business rule logic.",
+      "Ensured stable integration between partner systems and core VNVC services.",
+      "Handled performance issues and bug resolution for push and voucher-related workflows.",
+      "Maintained data contracts and integration consistency for the Tam Anh healthcare app.",
+      "Improved reliability of background synchronization and partner-specific integration workflows."
+    ],
+    architecture: {
+      api: "ASP.NET Core / Partner API Layer",
+      messageQueue: "RabbitMQ / Redis",
+      database: "PostgreSQL",
+      caching: "Redis",
+      realtime: "Webhooks / Push Notifications"
+    },
+    techStack: {
+      backend: ["C#", "ASP.NET Core", "Integration Workflows", "Bug Resolution"],
+      database: ["PostgreSQL", "Redis"],
+      infrastructure: ["Docker", "API Maintenance", "Production Stability"]
+    },
+    impact: [
+      "Significantly improved the stability of the Tam Anh partner application integration.",
+      "Resolved long-standing production bugs in voucher and push notification workflows.",
+      "Maintained high availability for partner-facing healthcare services.",
+      "Ensured consistent business rule enforcement across integrated platforms."
+    ],
+    screenshots: [
+      "https://picsum.photos/seed/partner-api1/1200/800",
+      "https://picsum.photos/seed/partner-api2/1200/800"
+    ]
+  },
+  {
+    id: "payroll-hrm-engine",
+    title: "Enterprise Payroll & HRM Engine",
+    subtitle: "High-Performance Payroll Calculation System for Thousands of Employees",
+    overview: "Designed and built the core payroll calculation engine for an enterprise HRM system handling thousands of employees monthly. This system required high accuracy, performance optimization, and strict data security.",
+    responsibilities: [
+      "Designed a dynamic payroll formula engine supporting flexible calculation rules per company or department.",
+      "Handled complex monthly salary, allowances, tax, and insurance logic with high accuracy.",
+      "Built acceleration logic to process payroll at scale and optimized bulk calculation workflows.",
+      "Implemented encryption for salary data and designed secure export mechanisms for sensitive information.",
+      "Built dynamic Excel import/export pipelines to handle large batch operations reliably.",
+      "Ensured strict data protection in storage and reporting for enterprise-level financial data."
+    ],
+    architecture: {
+      api: "ASP.NET Core / Clean Architecture",
+      messageQueue: "RabbitMQ",
+      database: "PostgreSQL / SQL Server",
+      caching: "Redis",
+      realtime: "SignalR for processing updates"
+    },
+    techStack: {
+      backend: ["C#", ".NET Core", "Encryption Handling", "Bulk Processing"],
+      database: ["PostgreSQL", "SQL Server"],
+      infrastructure: ["Docker", "Financial Logic Engine", "Performance Optimization"]
+    },
+    impact: [
+      "Enabled accurate monthly payroll processing for thousands of employees.",
+      "Reduced processing time for large datasets through optimized calculation logic.",
+      "Ensured 100% data security for sensitive financial information via encryption.",
+      "Streamlined HR operations with flexible, formula-based calculation rules."
+    ],
+    screenshots: [
+      "https://picsum.photos/seed/payroll1/1200/800",
+      "https://picsum.photos/seed/payroll2/1200/800"
+    ]
+  },
+  {
+    id: "analytics-bi-platform",
+    title: "Enterprise Analytics & Power BI Integration Platform",
+    subtitle: "SSO-Integrated Embedded Reporting Platform",
+    overview: "Built backend integration to embed Power BI reports directly into internal web applications, enabling seamless access without requiring separate Power BI accounts.",
+    responsibilities: [
+      "Implemented Power BI embedding in the internal web platform using SSO authentication.",
+      "Enabled users to view reports directly after login, removing the need for individual Power BI accounts.",
+      "Controlled report access based on internal role permissions and centralized authentication.",
+      "Integrated backend SSO with Power BI service for a seamless analytics experience.",
+      "Optimized report loading and access control for enterprise-wide business intelligence."
+    ],
+    architecture: {
+      api: "ASP.NET Core / Analytics API",
+      messageQueue: "RabbitMQ / Redis Streams",
+      database: "PostgreSQL / Elasticsearch",
+      caching: "Redis",
+    },
+    techStack: {
+      backend: ["C#", "ASP.NET Core", "SSO Integration", "Power BI Embedded"],
+      database: ["PostgreSQL", "Elasticsearch"],
+      infrastructure: ["Docker", "Centralized Authentication", "Analytics Experience"]
+    },
+    impact: [
+      "Provided a seamless analytics experience by embedding reports directly into internal apps.",
+      "Eliminated the cost and complexity of managing individual Power BI accounts for all users.",
+      "Enhanced security through centralized, role-based access control for BI reports.",
+      "Improved data accessibility for decision-makers across the organization."
+    ],
+    screenshots: [
+      "https://picsum.photos/seed/analytics1/1200/800",
+      "https://picsum.photos/seed/analytics2/1200/800"
+    ]
+  },
+  {
+    id: "next-erp-core",
+    title: "Next ERP Core System",
+    subtitle: "Enterprise ERP Backend & Workflow Automation",
+    overview: "Maintained and extended core ERP functionalities while modernizing workflow processes using external automation tools.",
+    responsibilities: [
+      "Fixed critical production bugs across various ERP modules to ensure operational continuity.",
+      "Developed Open APIs for seamless integration with external systems and automation tools.",
+      "Built Power Apps + Power Automate workflows to automate purchase request approvals.",
+      "Replaced manual ERP approval processes with automated flows, improving internal efficiency.",
+      "Modernized legacy ERP workflows through integration with modern automation platforms."
+    ],
+    architecture: {
+      api: "ASP.NET Core / ERP Transactional Layer",
+      messageQueue: "RabbitMQ",
+      database: "PostgreSQL / MongoDB",
+      caching: "Redis",
+    },
+    techStack: {
+      backend: ["C#", "ASP.NET Core", "Power Apps", "Power Automate"],
+      database: ["PostgreSQL", "MongoDB"],
+      infrastructure: ["Workflow Automation", "Docker", "Integration APIs"]
+    },
+    impact: [
+      "Significantly improved internal operational efficiency through workflow automation.",
+      "Reduced manual errors in the purchase request approval process.",
+      "Enhanced ERP extensibility via new Open API endpoints.",
+      "Maintained system stability by resolving complex production issues."
+    ],
+    screenshots: [
+      "https://picsum.photos/seed/erp1/1200/800",
+      "https://picsum.photos/seed/erp2/1200/800"
     ]
   },
   {

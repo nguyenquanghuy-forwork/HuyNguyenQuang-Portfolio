@@ -6,7 +6,7 @@ const Hero = () => {
   const [text, setText] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = ['Software Engineer', '.NET Developer', 'Backend Engineer'];
+  const roles = ['Senior Backend Engineer', 'System Architect', 'Distributed Systems Expert'];
   const typingSpeed = isDeleting ? 50 : 150;
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-bold tracking-tighter mb-6"
+          className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tighter mb-6 leading-tight"
         >
           Hi, I'm <span className="text-gradient">NGUYEN QUANG HUY</span>
         </motion.h1>
@@ -60,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl md:text-4xl font-mono text-white/80 mb-8 h-12"
+          className="text-xl sm:text-2xl md:text-4xl font-mono text-white/80 mb-8 h-12"
         >
           {text}<span className="animate-pulse">|</span>
         </motion.div>

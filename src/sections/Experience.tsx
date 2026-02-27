@@ -6,17 +6,18 @@ const Experience = () => {
   const experiences = [
     {
       company: "EPLUS RESEARCH",
-      role: ".NET Developer",
+      role: "Senior Backend Engineer",
       period: "2025 – Present",
-      description: "Developing production-grade APIs for the VNVC Ecosystem, supporting millions of users across healthcare branches.",
+      description: "Architecting and owning multiple enterprise-grade systems including the VNVC Ecosystem Platform, Tam Anh Partner API, and Enterprise Payroll Engine.",
       responsibilities: [
-        "Design & develop RESTful APIs with ASP.NET Core for VNVC App",
-        "Build complex internal salary calculation modules",
-        "Optimize SQL Server queries for enterprise-scale data",
-        "Integrate systems via RabbitMQ and microservice architecture",
-        "Collaborate with Mobile teams for high-performance API delivery"
+        "Built and scaled the VNVC Ecosystem Platform (Booking, Campaign Engine, Notifications)",
+        "Reduced Booking API latency by 90% (from 50s to 5s) via query and cache optimization",
+        "Rebuilt sequential notification jobs into a scalable batch-processing architecture",
+        "Designed and built a dynamic, high-performance Payroll Engine for thousands of employees",
+        "Modernized ERP workflows using Power Apps & Power Automate for purchase request approvals",
+        "Implemented SSO-integrated embedded Power BI reporting for a seamless analytics experience"
       ],
-      tech: ["ASP.NET Core", "SQL Server", "RabbitMQ", "Clean Architecture", "Microservices"],
+      tech: ["ASP.NET Core", "Redis Streams", "MongoDB", "ElasticSearch", "Vault Transit", "RabbitMQ", "Python", "NodeJS", "Power Platform"],
       isRecent: true
     },
     {

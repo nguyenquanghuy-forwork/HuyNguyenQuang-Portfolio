@@ -33,13 +33,13 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Architecting <span className="text-gradient">Robust</span> Solutions
+              System Builder & <span className="text-gradient">Backend Architect</span>
             </h2>
             <p className="text-white/70 text-lg mb-6 leading-relaxed">
-              I am a Software Engineer with over 5 years of experience, specializing in .NET backend development for large-scale enterprise systems.
+              With over 5 years of experience, I specialize in architecting and owning large-scale distributed systems. I don't just implement features; I design production-grade infrastructure that solves complex business domains and scalability challenges.
             </p>
             <p className="text-white/60 mb-10 leading-relaxed">
-              My core expertise lies in ASP.NET Core Web API, Clean Architecture, Microservices, and CQRS patterns. I have a proven track record of delivering complex projects independently or as a key team contributor. I am proficient in C#, VB.NET, ReactJS, SQL Server, PostgreSQL, MongoDB, Elasticsearch, and RabbitMQ.
+              My expertise lies in building high-concurrency platforms, dynamic business logic engines, and secure financial systems. I have a proven track record of taking ownership of system-level decisions and delivering robust, scalable solutions for enterprise-level ecosystems.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">

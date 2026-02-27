@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/30;
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 overflow-x-hidden;
     font-family: var(--font-sans);
   }
 }
