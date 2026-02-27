@@ -71,7 +71,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="max-w-2xl mx-auto text-lg text-white/60 mb-12 leading-relaxed"
         >
-          I specialize in building scalable backend systems and enterprise APIs using .NET and Clean Architecture.
+          I am a Senior Software Engineer with 5+ years of experience building scalable backend systems and enterprise APIs using .NET and Clean Architecture.
         </motion.p>
 
         <motion.div
@@ -81,20 +81,20 @@ const Hero = () => {
           className="flex flex-col md:flex-row items-center justify-center gap-6"
         >
           <a
-            href="#experience"
+            href="#projects"
             className="group relative px-8 py-4 rounded-full bg-primary text-white font-bold overflow-hidden transition-all hover:scale-105 active:scale-95"
           >
             <span className="relative z-10 flex items-center gap-2">
-              View Experience <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              View Projects <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           
           <a
-            href="#contact"
+            href="#experience"
             className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
           >
-            Contact Me
+            View Experience
           </a>
         </motion.div>
       </div>

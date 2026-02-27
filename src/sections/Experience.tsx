@@ -8,13 +8,13 @@ const Experience = () => {
       company: "EPLUS RESEARCH",
       role: ".NET Developer",
       period: "2025 – Present",
-      description: "Developing core APIs for VNVC App and internal salary calculation modules. Serving major healthcare systems including VNVC, Tam Anh Hospital, and Eco Green.",
+      description: "Developing production-grade APIs for the VNVC Ecosystem, supporting millions of users across healthcare branches.",
       responsibilities: [
-        "Design & develop RESTful APIs with ASP.NET Core",
-        "Handle complex business logic for salary calculation",
-        "Optimize SQL Server queries for high performance",
-        "Integrate systems via RabbitMQ messaging",
-        "Collaborate with Mobile teams for production-ready APIs"
+        "Design & develop RESTful APIs with ASP.NET Core for VNVC App",
+        "Build complex internal salary calculation modules",
+        "Optimize SQL Server queries for enterprise-scale data",
+        "Integrate systems via RabbitMQ and microservice architecture",
+        "Collaborate with Mobile teams for high-performance API delivery"
       ],
       tech: ["ASP.NET Core", "SQL Server", "RabbitMQ", "Clean Architecture", "Microservices"],
       isRecent: true
@@ -23,27 +23,28 @@ const Experience = () => {
       company: "STEP MEDIA SOFTWARE VIETNAM",
       role: ".NET Developer",
       period: "5/2023 – 2/2025",
-      description: "Built Go Food & Beverage management system, focusing on high-performance RESTful APIs and real-time communication.",
+      description: "Led backend development for Go Food & Beverage, a comprehensive F&B management SaaS platform.",
       responsibilities: [
-        "Developed core F&B management features",
-        "Optimized system performance for concurrent users",
-        "Implemented real-time features using SignalR",
-        "Managed distributed tasks with Redis and RabbitMQ"
+        "Developed core F&B management features and inventory tracking",
+        "Built notification microservices with SignalR and Firebase",
+        "Implemented complex discount and promotion logic",
+        "Integrated third-party payments (MoMo, PayPal)",
+        "Optimized database performance and API response times"
       ],
-      tech: ["ASP.NET Core", "RabbitMQ", "Redis", "SignalR", "Clean Architecture"]
+      tech: ["ASP.NET Core", "RabbitMQ", "Redis", "SignalR", "Clean Architecture", "CQRS"]
     },
     {
       company: "FPT RETAIL – Q7 HCM",
       role: "Fullstack Developer",
       period: "5/2021 – 3/2023",
-      description: "Led migration projects and warehouse booking systems for one of Vietnam's largest retail corporations.",
+      description: "Spearheaded digital transformation projects, migrating legacy systems and building logistics infrastructure.",
       responsibilities: [
-        "Migrated legacy Winform apps to modern Web platforms",
-        "Developed MRP Website using React and .NET Core",
-        "Built Warehouse Booking system with NestJS and RabbitMQ",
-        "Designed UI components using Ant Design"
+        "Migrated legacy Winform MRP systems to modern Web platforms",
+        "Developed Microservice support APIs using Elasticsearch and RabbitMQ",
+        "Built Warehouse Booking systems with NestJS and PostgreSQL",
+        "Developed Winform MRP applications using VB.NET and DevExpress"
       ],
-      tech: ["React", ".NET Core API", "PostgreSQL", "NestJS", "RabbitMQ", "Ant Design"]
+      tech: ["React", ".NET Core API", "PostgreSQL", "NestJS", "RabbitMQ", "Elasticsearch", "VB.NET"]
     }
   ];
 
@@ -66,7 +67,7 @@ const Experience = () => {
             transition={{ delay: 0.1 }}
             className="text-white/60 max-w-2xl mx-auto"
           >
-            Over 3 years of experience building enterprise-grade backend systems.
+            Over 5 years of experience building enterprise-grade backend systems.
           </motion.p>
         </div>
 

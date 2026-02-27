@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -6,6 +7,7 @@ import { cn } from '../lib/utils';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -22,11 +24,23 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Contact', href: '/#contact' },
   ];
+
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('/#') && location.pathname === '/') {
+      const id = href.replace('/#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <nav className={cn(
@@ -39,14 +53,14 @@ const Navbar = () => {
       />
       
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <motion.a 
-          href="#"
+        <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold tracking-tighter"
         >
-          <span className="text-gradient">HUY.DEV</span>
-        </motion.a>
+          <Link to="/" className="text-2xl font-bold tracking-tighter">
+            <span className="text-gradient">HUY.DEV</span>
+          </Link>
+        </motion.div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -54,6 +68,12 @@ const Navbar = () => {
             <motion.a
               key={link.name}
               href={link.href}
+              onClick={(e) => {
+                if (link.href.startsWith('/#') && location.pathname === '/') {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }
+              }}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
@@ -62,13 +82,15 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300"
-          >
-            Resume
-          </motion.button>
+          <Link to="/resume">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Resume
+            </motion.button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -91,7 +113,14 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                if (link.href.startsWith('/#') && location.pathname === '/') {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                } else {
+                  setIsMobileMenuOpen(false);
+                }
+              }}
               className="text-lg font-medium text-white/70 hover:text-primary"
             >
               {link.name}

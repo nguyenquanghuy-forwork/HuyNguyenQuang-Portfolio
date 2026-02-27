@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { GraduationCap, Globe } from 'lucide-react';
 
 const About = () => {
   return (
@@ -36,10 +36,10 @@ const About = () => {
               Architecting <span className="text-gradient">Robust</span> Solutions
             </h2>
             <p className="text-white/70 text-lg mb-6 leading-relaxed">
-              I am a Software Engineer with over 3 years of experience, specializing in .NET backend development for large-scale enterprise systems.
+              I am a Software Engineer with over 5 years of experience, specializing in .NET backend development for large-scale enterprise systems.
             </p>
             <p className="text-white/60 mb-10 leading-relaxed">
-              My core expertise lies in ASP.NET Core Web API, Clean Architecture, Microservices, and CQRS patterns. I focus on designing scalable, maintainable systems that deliver high performance under heavy loads.
+              My core expertise lies in ASP.NET Core Web API, Clean Architecture, Microservices, and CQRS patterns. I have a proven track record of delivering complex projects independently or as a key team contributor. I am proficient in C#, VB.NET, ReactJS, SQL Server, PostgreSQL, MongoDB, Elasticsearch, and RabbitMQ.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -55,12 +55,12 @@ const About = () => {
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <Award className="text-secondary" size={20} />
+                  <Globe className="text-secondary" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white/90">Focus</h4>
-                  <p className="text-sm text-white/50">Scalable Systems</p>
-                  <p className="text-xs text-white/40">Clean Architecture & Microservices</p>
+                  <h4 className="font-bold text-white/90">Languages</h4>
+                  <p className="text-sm text-white/50">English (Aptis ESOL 154)</p>
+                  <p className="text-xs text-white/40">Equivalent to IELTS 5.5</p>
                 </div>
               </div>
             </div>

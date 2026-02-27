@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
-import Hero from './sections/Hero';
-import About from './sections/About';
-import Skills from './sections/Skills';
-import Experience from './sections/Experience';
-import Stats from './sections/Stats';
-import Contact from './sections/Contact';
+import Home from './pages/Home';
+import ProjectDetail from './pages/ProjectDetail';
+import Resume from './pages/Resume';
 
 const LoadingScreen = () => (
   <motion.div
@@ -34,6 +32,14 @@ const LoadingScreen = () => (
   </motion.div>
 );
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -43,36 +49,37 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative bg-background text-foreground selection:bg-primary/30">
-      <AnimatePresence>
-        {isLoading && <LoadingScreen />}
-      </AnimatePresence>
-
-      {!isLoading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Stats />
-            <Skills />
-            <Experience />
-            <Contact />
-          </main>
-          
-          <footer className="py-12 border-t border-white/5 text-center">
-            <div className="container mx-auto px-6">
-              <p className="text-white/40 text-sm">
-                © {new Date().getFullYear()} Nguyen Quang Huy. Built with React, Tailwind & Framer Motion.
-              </p>
-            </div>
-          </footer>
-        </motion.div>
-      )}
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="relative bg-background text-foreground selection:bg-primary/30">
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <LoadingScreen key="loader" />
+          ) : (
+            <motion.div
+              key="content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/project/:id" element={<ProjectDetail />} />
+                <Route path="/resume" element={<Resume />} />
+              </Routes>
+              
+              <footer className="py-12 border-t border-white/5 text-center">
+                <div className="container mx-auto px-6">
+                  <p className="text-white/40 text-sm">
+                    © {new Date().getFullYear()} Nguyen Quang Huy. Built with React, Tailwind & Framer Motion.
+                  </p>
+                </div>
+              </footer>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </Router>
   );
 }
