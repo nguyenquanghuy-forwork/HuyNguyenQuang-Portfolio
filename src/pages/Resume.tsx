@@ -59,7 +59,7 @@ const Resume = () => {
                   padding: 0,
                   margin: 0
                 }}
-                src="https://www.canva.com/design/DAF3_QVN56E/0hq9_bvbSOIo4mlQ3Psh6w/view?embed" 
+                src="https://www.canva.com/design/DAGuESwGh4U/sDVxIcuFkn72Bxjk1Lbqsg/view" 
                 allowFullScreen={true}
                 allow="fullscreen"
                 title="Nguyen Quang Huy Resume"
@@ -70,7 +70,7 @@ const Resume = () => {
 
           <div className="mt-12 text-center">
             <p className="text-white/40 text-sm mb-6">
-              Can't see the resume? <a href="https://www.canva.com/design/DAF3_QVN56E/0hq9_bvbSOIo4mlQ3Psh6w/view" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Click here to view it directly.</a>
+              Can't see the resume? <a href="https://www.canva.com/design/DAGuESwGh4U/sDVxIcuFkn72Bxjk1Lbqsg/view" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Click here to view it directly.</a>
             </p>
           </div>
         </motion.div>
