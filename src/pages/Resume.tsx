@@ -23,7 +23,7 @@ const Resume = () => {
             
             <div className="flex gap-4">
               <a 
-                href="https://www.canva.com/design/DAF3_QVN56E/0hq9_bvbSOIo4mlQ3Psh6w/view" 
+                href="https://www.canva.com/design/DAGuESwGh4U/sDVxIcuFkn72Bxjk1Lbqsg/view" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
